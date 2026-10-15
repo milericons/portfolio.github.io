@@ -900,13 +900,18 @@ body.theme-dark .project-card__demo-item span {
     height: clamp(54px, 5.6vw, 72px);
     border: 1px solid rgba(17, 17, 17, .25);
     border-radius: 50%;
-    font-size: clamp(1.3rem, 2vw, 2rem);
     background: rgba(255, 255, 255, .78);
     backdrop-filter: blur(12px);
     transition:
         transform 260ms cubic-bezier(.16, 1, .3, 1),
         background-color 260ms ease,
         color 260ms ease;
+}
+
+.project-card__arrow .miller-icon {
+    width: 26px;
+    height: 26px;
+    transform: rotate(-45deg);
 }
 
 .project-card:hover .project-card__arrow {
@@ -1359,6 +1364,12 @@ body.theme-dark .manifesto__avatar {
     height: 20px;
 }
 
+.contact__socials .miller-icon {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+}
+
 .contact__back {
     display: inline-block;
     margin-top: 44px;
@@ -1368,6 +1379,14 @@ body.theme-dark .manifesto__avatar {
     letter-spacing: .1em;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.contact__back .miller-icon {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    vertical-align: middle;
 }
 
 /* =========================================================
@@ -1821,6 +1840,25 @@ body.theme-dark .contact__details [data-pending] {
     transition:
         transform 420ms cubic-bezier(.16, 1, .3, 1),
         opacity 220ms ease;
+}
+
+.theme-toggle__icon .miller-icon {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-toggle__icon .miller-icon svg,
+.project-card__arrow .miller-icon svg,
+.contact__back .miller-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+body.theme-dark .theme-toggle__moon,
+body:not(.theme-dark) .theme-toggle__sun {
+    display: inline-flex;
 }
 
 .theme-toggle:hover .theme-toggle__icon {

@@ -425,9 +425,6 @@
                ======================================================= */
 
             const themeToggle = document.querySelector(".theme-toggle");
-            const themeToggleIcon = document.querySelector(
-                ".theme-toggle__icon"
-            );
             const themeToggleText = document.querySelector(
                 ".theme-toggle__text"
             );
@@ -450,10 +447,6 @@
                             ? "Cambiar a tema claro"
                             : "Cambiar a tema oscuro"
                     );
-                }
-
-                if (themeToggleIcon) {
-                    themeToggleIcon.textContent = isDark ? "☾" : "☼";
                 }
 
                 if (themeToggleText) {
@@ -661,4 +654,3 @@
             }
 
         })();
-
