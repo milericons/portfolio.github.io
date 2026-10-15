@@ -1371,22 +1371,42 @@ body.theme-dark .manifesto__avatar {
 }
 
 .contact__back {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-top: 44px;
-    color: #ffffff;
+    padding: 13px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
     font-size: .8rem;
     font-weight: 900;
     letter-spacing: .1em;
     text-decoration: none;
     text-transform: uppercase;
+    transition:
+        background-color 220ms ease,
+        color 220ms ease,
+        border-color 220ms ease,
+        transform 220ms ease;
+}
+
+.contact__back:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+}
+
+.contact__back:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
 .contact__back .miller-icon {
     display: inline-flex;
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
-    vertical-align: middle;
+    width: 18px;
+    height: 18px;
 }
 
 /* =========================================================
