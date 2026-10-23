@@ -1186,7 +1186,7 @@ body.theme-dark .artwork {
 
 .artwork:hover img {
     transform: scale(1.02);
-    filter: brightness(1.04) saturate(1.08);
+    filter: blur(0) brightness(1.04) saturate(1.08);
 }
 
 .artwork__caption {
