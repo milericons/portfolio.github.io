@@ -653,4 +653,44 @@
                 });
             }
 
+            /*
+             * Oculta el loader de cada artwork cuando su imagen termina de cargar.
+             */
+            document.querySelectorAll(".artwork").forEach((artwork) => {
+                const img = artwork.querySelector("img");
+                const skeleton = artwork.querySelector(".artwork__skeleton");
+                if (!img || !skeleton) return;
+
+                const hideSkeleton = () => {
+                    skeleton.classList.add("is-hidden");
+                    img.classList.add("is-loaded");
+                };
+
+                if (img.complete && img.naturalWidth > 0) {
+                    hideSkeleton();
+                } else {
+                    img.addEventListener("load", hideSkeleton, { once: true });
+                    img.addEventListener("error", hideSkeleton, { once: true });
+                }
+            });
+
+            /*
+             * El botón de abrir redirige al enlace de Behance de la imagen.
+             */
+            document.querySelectorAll(".artwork__open").forEach((button) => {
+                button.addEventListener("click", () => {
+                    const link = button.closest(".artwork")?.querySelector("a");
+                    if (link) window.open(link.href, "_blank", "noopener");
+                });
+                button.setAttribute("role", "button");
+                button.setAttribute("tabindex", "0");
+                button.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        const link = button.closest(".artwork")?.querySelector("a");
+                        if (link) window.open(link.href, "_blank", "noopener");
+                    }
+                });
+            });
+
         })();
